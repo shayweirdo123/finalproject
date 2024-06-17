@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>shay</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h3>General Knowledge Quiz</h3>
+
+    <!-- Question 1 -->
+    <div id="question1">
+        <img src="חידה 1.jpg" alt="Quiz Image 1">
+        <br>
+        <button onclick="wrong('feedback1')">באט</button>
+        <button onclick="wrong('feedback1')">ראנד</button>
+        <button onclick="correct('feedback1')">רופי</button>
+        <button onclick="wrong('feedback1')">בבו</button>
+        <br>
+        <div id="feedback1"></div>
+    </div>
+
+    <br>
+
+    <!-- Question 2 -->
+    <div id="question2">
+        <img src="question2.jpg" alt="Quiz Image 2">
+        <br>
+        <button onclick="correct('feedback2')">רומא</button>
+        <button onclick="wrong('feedback2')">פירנצה</button>
+        <button onclick="wrong('feedback2')">מילאנו</button>
+        <button onclick="wrong('feedback2')">סיציליה</button>
+        <br>
+        <div id="feedback2"></div>
+    </div>
+
+    <br>
+
+    <!-- Question 3 -->
+    <div id="question3">
+        <img src="question3.jpg" alt="Quiz Image 3">
+        <br>
+        <button onclick="wrong('feedback3')">יצחק רבין</button>
+        <button onclick="wrong('feedback3')">מנחם בגין</button>
+        <button onclick="wrong('feedback3')">לוי אשכול</button>
+        <button onclick="correct('feedback3')">גולדה מאיר</button>
+        <br>
+        <div id="feedback3"></div>
+    </div>
+
+    <br>
+
+    <!-- Question 4 -->
+    <div id="question4">
+        <img src="question4.jpg" alt="Quiz Image 4">
+        <br>
+        <button onclick="wrong('feedback4')">פיתגורס</button>
+        <button onclick="correct('feedback4')">ארכימדס</button>
+        <button onclick="wrong('feedback4')">לאונדו דה וינצ'י</button>
+        <button onclick="wrong('feedback4')">גלילאו גליללי</button>
+        <br>
+        <div id="feedback4"></div>
+    </div>
+
+    <br>
+
+    <!-- Question 5 -->
+    <div id="question5">
+        <img src="question5.jpg" alt="Quiz Image 5">
+        <br>
+        <button onclick="wrong('feedback5')"> פליטים מחומשים</button>
+        <button onclick="correct('feedback5')">פלוגות המחץ </button>
+        <button onclick="wrong('feedback5')"> פלוגות מחתרת</button>
+        <button onclick="wrong('feedback5')"> פלוגות מחתרת החירות</button>
+        <br>
+        <div id="feedback5"></div>
+    </div>
+
+    <br>
+
+    <h3>Score: <span id="score">0</span></h3>
+
+    <script>
+        let count = 0;
+
+        function lower_score() {
+            count--;
+            updateScore();
+        }
+
+        function up_score() {
+            count++;
+            updateScore();
+        }
+
+        function wrong(feedbackId) {
+            const feedbackTag = document.getElementById(feedbackId);
+            feedbackTag.innerHTML = "! לא נכון, נסו שוב ";
+            lower_score();
+        }
+
+        function correct(feedbackId) {
+            const feedbackTag = document.getElementById(feedbackId);
+            feedbackTag.innerHTML = " נכון";
+            up_score();
+        }
+
+        function updateScore() {
+            const scoreTag = document.getElementById("score");
+            scoreTag.innerHTML = count;
+        }
+    </script>
+</body>
+</html>
